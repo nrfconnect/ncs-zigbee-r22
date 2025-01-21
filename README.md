@@ -1,6 +1,6 @@
 # Zigbee R22 add-on for nRF Connect SDK (Experimental support)
 
-> This is an production ready release of Zigbee R22 support for Nordic Semiconductor’s nRF52833, nRF52840 and nRF5340 SoCs.
+> This is a production ready release of Zigbee R22 support for Nordic Semiconductor’s nRF52833, nRF52840 and nRF5340 SoCs.
 
 The Zigbee R22 add-on for the nRF Connect SDK provides support for developing Zigbee applications based on the third-party precompiled ZBOSS stack. This stack is included as the ZBOSS Zigbee R22 stack library. In combination with the nRF Connect SDK, the Zigbee R22 add-on allows for development of low-power connected solutions.
 
