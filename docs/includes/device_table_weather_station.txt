@@ -1,0 +1,16 @@
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Hardware platforms
+     - PCA
+     - Board target
+     - Documentation
+   * - `Thingy:53 <Developing with Thingy:53_>`_
+     - PCA20053
+     - | ``thingy53/nrf5340/cpuapp``
+       | ``thingy53/nrf5340/cpuapp/ns`` 
+       | ``thingy53/nrf5340/cpunet``
+     - | `Quick start <Quick start guides_>`_
+       | `Hardware specification <Thingy53 hardware_>`_
+
