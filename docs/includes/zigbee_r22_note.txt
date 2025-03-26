@@ -1,4 +1,4 @@
 .. note::
    Zigbee R22 is currently in maintenance mode, and it is not recommended to use it for new Zigbee designs.
    While critical bug fixes and security updates will be provided as necessary, it will not receive any enhancements or new features. 
-   The `Zigbee R23 add-on`_ represents Nordic's primary solution for future Zigbee developments, offering improvements, support for new features, and support for new platforms such as the nRF54L series.
+   The `Zigbee R23 add-on`_ represents Nordic's primary solution for future Zigbee developments, offering improvements, support for new features, and support for the nRF52840 SoC and new platforms such as the nRF54L series.
