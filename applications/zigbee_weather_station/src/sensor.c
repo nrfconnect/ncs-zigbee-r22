@@ -6,6 +6,7 @@
 
 #include <zephyr/logging/log.h>
 
+
 #include "sensor.h"
 
 /*
