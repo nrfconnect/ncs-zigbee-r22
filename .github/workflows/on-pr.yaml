@@ -1,0 +1,42 @@
+name: Build zigbee samples on pr
+on: 
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - 'LICENSE'
+      - 'CODEOWNERS'
+      - '.gitignore'
+    branches:
+      - main
+jobs:
+  Build-samples:
+    runs-on: ubuntu-24.04
+    container: ghcr.io/nrfconnect/sdk-nrf-toolchain:v2.7.99
+    defaults:
+      run:
+        # Bash shell is needed to set toolchain related environment variables in docker container
+        # It is a workaround for GitHub Actions limitation https://github.com/actions/runner/issues/1964
+        shell: bash
+    steps: 
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        path: zigbee
+    - name: prepare west project
+      run: |
+        rm -rf .west
+        west --version
+        west init -l zigbee --mf west.yml &&
+        west update -n -o=--depth=1 --path-cache /workdir/
+    - name: Twister build samples
+      run: |
+        source zephyr/zephyr-env.sh
+        zephyr/scripts/twister --inline-logs --build-only -N --verbose -T zigbee/samples --all -x CONFIG_ZBOSS_HALT_ON_ASSERT=y -x CONFIG_RESET_ON_FATAL_ERROR=n -x CONFIG_FACTORY_RESET_PRESS_TIME_SECONDS=2
+    - name: Store hex files
+      uses: actions/upload-artifact@v4
+      with:
+        name: hexes
+        path: twister-out/**/*.hex
+
