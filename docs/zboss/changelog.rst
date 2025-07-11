@@ -9,6 +9,15 @@ ZBOSS stack changelog
 
 All notable changes to this project in the |NCS| are documented in this file.
 
+|addon| v1.0.1
+**************
+
+ZBOSS 3.11.8.0
+  `Documentation <ZBOSS 3.11.8.0 Documentation_>`_ | `Release notes <ZBOSS 3.11.8.0 changelog_>`_
+
+NCP Host 2.2.7
+  `Documentation <NCP Host 2.2.7 Documentation_>`_ | `Release notes <NCP Host 2.2.7 changelog_>`_
+
 |addon| v1.0.0
 **************
 
