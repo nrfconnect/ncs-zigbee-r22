@@ -8,11 +8,13 @@ This page outlines the requirements that you need to meet before you start worki
 Hardware requirements
 *********************
 
-The |addon| supports the nRF52840, nRF52833, nRF5340, and nRF21540 SoCs.
+The |addon| supports the nRF52840, nRF52833 and nRF5340 SoCs.
 
-To work with the |addon| for the |NCS| and test the available samples, you need at least two development kits.
+For the :ref:`zigbee_quickstart`, you need three development kits of the following types:
 
-For the :ref:`zigbee_quickstart`, you need three devices.
+.. include:: /includes/device_table_single.txt
+
+You can mix different development kits.
 
 Software requirements
 *********************
