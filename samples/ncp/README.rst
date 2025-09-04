@@ -77,19 +77,40 @@ Serial communication setup
 ==========================
 
 The communication channel uses Zephyr's `UART API`_ API.
-The serial device is selected in devicetree as follows:
 
-.. code-block:: devicetree
+.. tabs::
 
-   chosen {
-       ncs,zigbee-uart = &uart0;
-   };
+   .. group-tab:: nRF5340 DK
 
-By default, Zephyr's logger uses ``uart0`` and the NCP sample communicates through the UART serialization using ``uart1``.
-The DTS overlay file configures ``uart1`` to be connected to the on-board J-Link instead of ``uart0``.
-As the result, Zephyr's logger ``uart0`` is available only through GPIO pins (**P1.00** and **P1.01**).
+      The serial device is selected in the following devicetree:
 
-The ``uart0`` pins are configured by devicetree overlay files for each supported development kit in the :file:`boards` directory.
+      .. code-block:: devicetree
+
+         chosen {
+             ncs,zigbee-uart = &uart1;
+         };
+
+      By default, Zephyr's logger uses ``uart0``, and the NCP sample communicates through the UART serialization using ``uart1``.
+      The DTS overlay file configures ``uart1`` to connect to the on-board J-Link instead of ``uart0``.
+      As a result, Zephyr's logger on ``uart0`` is available only through GPIO pins (**P1.04** and **P1.05**).
+
+      The ``uart0`` pins are configured by devicetree overlay files for each supported development kit in the :file:`boards` directory.
+
+   .. group-tab:: nRF52 DKs
+
+      The serial device is selected in the following devicetree:
+
+      .. code-block:: devicetree
+
+         chosen {
+             ncs,zigbee-uart = &uart1;
+         };
+
+      By default, Zephyr's logger uses ``uart0``, and the NCP sample communicates through the UART serialization using ``uart1``.
+      The DTS overlay file configures ``uart1`` to connect to the on-board J-Link instead of ``uart0``.
+      As a result, Zephyr's logger on ``uart0`` is available only through GPIO pins (**P1.01** and **P1.02**).
+
+      The ``uart0`` pins are configured by devicetree overlay files for each supported development kit in the :file:`boards` directory.
 
 Communication through USB
 -------------------------
